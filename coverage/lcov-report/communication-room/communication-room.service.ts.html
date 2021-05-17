@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for communication-room/communication-room.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">communication-room</a> communication-room.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>9/75</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.59% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>7/73</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318</td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Model } from "mongoose";
+import { Injectable } from "@nestjs/common";
+import { InjectModel } from "@nestjs/mongoose";
+import {
+  ICommunicationRoom,
+  ICommunicationRoomService
+} from "./interfaces/index";
+import { CommunicationRoomDto } from "./dto/communication-room.dto";
+import { debug } from "console";
+import mongoose = require("mongoose");
+import { ResMessage } from ".././common/res.message";
+&nbsp;
+@Injectable()
+export class CommunicationRoomService implements ICommunicationRoomService {
+<span class="fstat-no" title="function not covered" >  constructor(</span>
+    @InjectModel("communicationRoom")
+    private readonly <span class="cstat-no" title="statement not covered" >communicationModel: Model&lt;ICommunicationRoom&gt;</span>
+  ) {}
+&nbsp;
+  // async findAll(): Promise&lt;ICommunicationRoom[]&gt; {
+  //   return await this.communicationModel.find().exec();
+  // }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >findAll</span>(): Promise&lt;ICommunicationRoom[]&gt; {
+<span class="cstat-no" title="statement not covered" >    return await this.communicationModel.find().exec();</span>
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >findOne</span>(options: object): Promise&lt;ICommunicationRoom&gt; {
+<span class="cstat-no" title="statement not covered" >    return await this.communicationModel.findOne(options).exec();</span>
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >checkRoom</span>(params: object): Promise&lt;ICommunicationRoom[]&gt; {
+    
+    let data = <span class="cstat-no" title="statement not covered" >params["to_user_id"];</span>
+<span class="cstat-no" title="statement not covered" >    data.push(params["from_user_id"]);</span>
+    
+<span class="cstat-no" title="statement not covered" >    return await this.communicationModel.find(</span>
+      { users: { $size: data.length, $all: data }},
+      { _id: 1,is_blocked: 1 }
+    );
+  }
+  
+  async <span class="fstat-no" title="function not covered" >checkConversation</span>(params: object): Promise&lt;ICommunicationRoom[]&gt; {
+    
+    let data = <span class="cstat-no" title="statement not covered" >params["to_user_id"];</span>
+<span class="cstat-no" title="statement not covered" >    data.push(params["from_user_id"]);</span>
+    
+<span class="cstat-no" title="statement not covered" >    return await this.communicationModel.find(</span>
+      { users: { $size: data.length, $all: data },"is_delete":{"$nin":[params["from_user_id"]]}},
+      { _id: 1,room_id: 1}
+    );
+  }
+  
+  async <span class="fstat-no" title="function not covered" >updateDelete</span>(params: object): Promise&lt;ICommunicationRoom[]&gt; {
+    
+    let result = <span class="cstat-no" title="statement not covered" >await this.communicationModel.find({"_id":params['room_id']});</span>
+<span class="cstat-no" title="statement not covered" >     result.map(<span class="fstat-no" title="function not covered" >key</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        params['to_user_id'].map(<span class="fstat-no" title="function not covered" >key1</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                 key.is_delete.splice(key.is_delete.indexOf(mongoose.Types.ObjectId(key1)), 1);</span>
+         })
+         
+<span class="cstat-no" title="statement not covered" >     key.save();</span>
+     
+    });
+    
+<span class="cstat-no" title="statement not covered" >    return result;</span>
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >findUsersList</span>(params: object): Promise&lt;ICommunicationRoom[]&gt; {
+    
+    //console.log(params);
+    let id = <span class="cstat-no" title="statement not covered" >params['user_id'];</span>
+    let limit = <span class="cstat-no" title="statement not covered" >parseInt(params['limit']);</span>
+    let offset = <span class="cstat-no" title="statement not covered" >parseInt(params['offset']);</span>
+    
+    let from_date = <span class="cstat-no" title="statement not covered" >(typeof params['from_date'] != 'undefined') ? params['from_date'] : '';</span>
+    let to_date = <span class="cstat-no" title="statement not covered" >(typeof params['to_date'] != 'undefined') ? params['to_date'] : '';</span>
+    
+    
+    let match_query : any;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    match_query = { </span>
+      users :  { $in : [mongoose.Types.ObjectId(id)] },
+    }
+&nbsp;
+    //For Search
+    let keyword = <span class="cstat-no" title="statement not covered" >(typeof params['keyword'] != 'undefined') ? params['keyword'] : '';</span>
+    let match_query_search : any = <span class="cstat-no" title="statement not covered" >{};</span>
+    let keyword_1 : string = <span class="cstat-no" title="statement not covered" >"";</span>
+    let keyword_lowercase : string = <span class="cstat-no" title="statement not covered" >"";</span>
+    let sort : any = <span class="cstat-no" title="statement not covered" >{};</span>
+    
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if(from_date != "" &amp;&amp; to_date != "")  {</span>
+<span class="cstat-no" title="statement not covered" >      sort = {</span>
+        "created_date": -1
+      }
+<span class="cstat-no" title="statement not covered" >      match_query = {</span>
+        "users" :  { $in : [mongoose.Types.ObjectId(id)] },
+        "communications.created_date" : { '$gte': new Date(from_date),'$lte': new Date(to_date) }
+      };
+    } else <span class="cstat-no" title="statement not covered" >if(keyword != '') {</span>
+<span class="cstat-no" title="statement not covered" >      keyword = new RegExp(params['keyword'], 'i');</span>
+<span class="cstat-no" title="statement not covered" >      keyword_1 = params['keyword'];</span>
+<span class="cstat-no" title="statement not covered" >      keyword_lowercase = params['keyword'].toLowerCase();</span>
+<span class="cstat-no" title="statement not covered" >      match_query_search = {</span>
+        $or:[ 
+          {
+            'communications.user_name' : {
+              $regex: keyword
+            },
+          },
+          {
+            'communications.communications.type_value.message' : {
+              $regex: keyword
+            }
+          }
+          
+        ] 
+      }
+<span class="cstat-no" title="statement not covered" >      sort = {</span>
+        "sort" : 1
+      }
+      
+    } else {
+<span class="cstat-no" title="statement not covered" >      sort = {</span>
+        "created_date": -1
+      }
+<span class="cstat-no" title="statement not covered" >      match_query = {</span>
+        "users" :  { $in : [mongoose.Types.ObjectId(id)] }
+      };
+    }
+    
+<span class="cstat-no" title="statement not covered" >    match_query['is_delete'] = { $nin : [mongoose.Types.ObjectId(id)] };</span>
+    
+    
+    var aggregate = <span class="cstat-no" title="statement not covered" >[</span>
+&nbsp;
+       {
+          '$lookup': {
+              'from': 'communications',
+              'localField': '_id',
+              'foreignField': 'room_id',
+              'as': 'communications'
+          }
+      },
+      
+      {
+          '$unwind': {
+              "path": '$communications',
+              "preserveNullAndEmptyArrays": true
+          }
+      },
+      {
+            '$lookup': {
+                'from': 'user',
+                'localField': 'users',
+                'foreignField': '_id',
+                'as': 'user'
+            }
+        },
+        {
+          '$unwind': {
+              "path": '$user',
+              "preserveNullAndEmptyArrays": true
+          }
+        },
+      { '$match': match_query },
+      { "$sort": { "communications.created_date": 1 } },
+      { 
+        "$group": { 
+          "_id": "$_id",
+          "communications" : { 
+            $push:  { 
+              "user_name": { $toLower: "$user.username" },
+              "communications" : "$communications",
+              "user_id" : "$user._id",
+              "is_blocked": "$is_blocked"
+        }
+          }
+        }
+      },
+      {
+        '$unwind': {
+            "path": '$communications',
+            "preserveNullAndEmptyArrays": false
+        }
+      },
+      {
+        '$match': {
+          'communications.user_id': { $ne : mongoose.Types.ObjectId(id) },
+          'communications.communications.is_blocked': false
+        } 
+      },
+      { 
+        '$match': match_query_search 
+      },
+      { 
+        "$group": { 
+          "_id": "$_id",
+          "communications" : { $last : "$communications" }
+        }
+      },
+      {
+        $project: {
+          _id: "$_id",
+          //username: "$username",
+          user_name : '$communications.user_name',
+          user_name_id : '$communications.user_id',
+          from_user_id: "$communications.communications.from_user_id",
+          to_user_id: "$communications.communications.to_user_id",
+          date: "$communications.communications.created_date",
+          communications_id: "$communications.communications._id",
+          type: "$communications.communications.type",
+          type_value: "$communications.communications.type_value",
+          message: "$communications.communications.type_value",
+          is_forward: "$communications.communications.is_forward",
+          created_date: "$communications.communications.created_date",
+          updated_date: "$communications.communications.updated_date",
+          is_blocked: "$communications.is_blocked",
+          'sort': {
+            $cond: { 
+              if: { $eq: [ keyword, "" ] }, 
+              then: "1",
+              else: {
+                $cond: {
+                  if: { 
+                    $gte: [ { $indexOfBytes: [ "$communications.user_name", keyword_lowercase ] }, 0 ] 
+                  }, then: 1, else: 2 
+                }
+              }
+            }
+          },
+          is_read_flag:{
+            $cond: { if: { $gte: [ { $indexOfArray: [ "$communications.communications.is_read", mongoose.Types.ObjectId( params["user_id"]) ] }, 0 ] }, then: true, else: false }
+          },
+               
+        }
+      },
+      { "$sort": sort },
+      { '$skip': offset },
+      { '$limit': limit },
+&nbsp;
+  ];
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return await this.communicationModel.aggregate(aggregate).exec()</span>
+&nbsp;
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >findById</span>(ID: number): Promise&lt;ICommunicationRoom&gt; {
+<span class="cstat-no" title="statement not covered" >    return await this.communicationModel.findById(ID).exec();</span>
+  }
+&nbsp;
+  // Create Room for chat
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >createRoom</span>(params): Promise&lt;ICommunicationRoom&gt; {
+    const createdCommunicationCenterDto = <span class="cstat-no" title="statement not covered" >new this.communicationModel(params);</span>
+//    console.log("createdCommunicationCenterDto", createdCommunicationCenterDto);
+<span class="cstat-no" title="statement not covered" >    return await createdCommunicationCenterDto.save();</span>
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >create</span>(CommunicationRoomDto): Promise&lt;ICommunicationRoom&gt; {
+    const createdCommunicationCenterDto = <span class="cstat-no" title="statement not covered" >new this.communicationModel(</span>
+      CommunicationRoomDto
+    );
+<span class="cstat-no" title="statement not covered" >    console.log("createdCommunicationCenterDto", createdCommunicationCenterDto);</span>
+<span class="cstat-no" title="statement not covered" >    return await createdCommunicationCenterDto.save();</span>
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >update</span>(
+    ID: number,
+    newValue: ICommunicationRoom
+  ): Promise&lt;ICommunicationRoom&gt; {
+    const todo = <span class="cstat-no" title="statement not covered" >await this.communicationModel.findById(ID).exec();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (!todo._id) {</span>
+<span class="cstat-no" title="statement not covered" >      debug("todo not found");</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    await this.communicationModel.findByIdAndUpdate(ID, newValue).exec();</span>
+<span class="cstat-no" title="statement not covered" >    return await this.communicationModel.findById(ID).exec();</span>
+  }
+  async <span class="fstat-no" title="function not covered" >delete</span>(ID: number): Promise&lt;string&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      await this.communicationModel.findByIdAndRemove(ID).exec();</span>
+<span class="cstat-no" title="statement not covered" >      return "The todo has been deleted";</span>
+    } catch (err) {
+<span class="cstat-no" title="statement not covered" >      debug(err);</span>
+<span class="cstat-no" title="statement not covered" >      return "The todo could not be deleted";</span>
+    }
+  }
+  
+   async <span class="fstat-no" title="function not covered" >roomDelete</span>(options: object): Promise&lt;string&gt; {
+    let result = <span class="cstat-no" title="statement not covered" >await this.communicationModel</span>
+      .find({ _id: {$in : options['room_id'] } })
+      .exec();
+<span class="cstat-no" title="statement not covered" >      result.map(<span class="fstat-no" title="function not covered" >key</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >     key.is_delete.push(options["user_id"]);</span>
+<span class="cstat-no" title="statement not covered" >      key.save();</span>
+    });
+<span class="cstat-no" title="statement not covered" >      return ResMessage.DELETE_SUCC;</span>
+    
+  }
+  
+  async <span class="fstat-no" title="function not covered" >block</span>(options: object): Promise&lt;string&gt; {
+    let result = <span class="cstat-no" title="statement not covered" >await this.communicationModel</span>
+      .find({ _id: {$in : options['room_id'] } })
+      .exec();
+<span class="cstat-no" title="statement not covered" >      result.map(<span class="fstat-no" title="function not covered" >key</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >     key.is_blocked.push(options["user_id"]);</span>
+<span class="cstat-no" title="statement not covered" >      key.save();</span>
+    });
+<span class="cstat-no" title="statement not covered" >      return ResMessage.DELETE_SUCC;</span>
+    
+  }
+  
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon May 06 2019 16:18:26 GMT+0530 (IST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+    "projectSetup": {       
+        "address": "ci-dev.augustasoftsol.com",
+        "port":4001
+    },
+    "database": {
+        "link":"mongodb://ci:N0password@66.219.96.85:27017/ci_dev",
+        "link1":"mongodb://cistg:N0passw0rd@216.117.129.199:27017/ci_stage"
+    },
+    "ssl": {
+        "private": "/etc/apache2/ssl/augustasoftsol.key",
+        "certificate": "/etc/apache2/ssl/661c5a20830d3c2e.crt",
+        "bundle": "/etc/apache2/ssl/gd_bundle-g2-g1.crt"
+    },
+    "env":"development"
+}

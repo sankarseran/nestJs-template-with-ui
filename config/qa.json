@@ -1,0 +1,15 @@
+{
+    "projectSetup": {       
+        "address": "ci-qa.augustasoftsol.com",
+        "port":4101
+    },
+    "database": {
+        "link":"mongodb://ciqa:N0passw0rd@216.117.129.199:27017/ci_qa"
+    },
+    "ssl": {
+        "private": "/etc/apache2/ssl/augustasoftsol.key",
+        "certificate": "/etc/apache2/ssl/661c5a20830d3c2e.crt",
+        "bundle": "/etc/apache2/ssl/gd_bundle-g2-g1.crt"
+    },
+    "env":"qa"
+}

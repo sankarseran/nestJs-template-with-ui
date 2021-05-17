@@ -1,0 +1,21 @@
+export declare const ResMessage: {
+    SUCC: string;
+    ERR: string;
+    CREATED_SUCC: string;
+    DELETE_SUCC: string;
+    UPDATE_SUCC: string;
+    BLOCKED_SUCC: string;
+    LOGIN_SUCC: string;
+    LOGIN_ERROR: string;
+    LOGOUT_SUCC: string;
+    VALIDATION_ERROR: string;
+    EMAIL_NOT_EXISTS: string;
+    PASSWORD_NOT_EXISTS: string;
+    LIST_SUCC: string;
+    ROLE_ERROR: string;
+    FORGET_PASSWORD_CHECK_MAIL: string;
+    RESET_PASSWORD_SUCC: string;
+    RESET_PASSWORD_EXPRIED: string;
+    FORGET_PASSWORD: string;
+    FORGET_PASSWORD_MAIL_CONTENT: string;
+};

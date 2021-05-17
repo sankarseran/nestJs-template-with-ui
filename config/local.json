@@ -1,0 +1,23 @@
+{
+    "projectSetup": {       
+        "address": "localhost",
+        "port":5000
+    },
+     "database": {
+        "link":"mongodb://stopgap:jnU8NW4WYnb4@66.219.96.85:27017/stopgap_dev"
+    },
+    "ssl": {
+        "private": "/etc/apache2/ssl/augustasoftsol.key",
+        "certificate": "/etc/apache2/ssl/661c5a20830d3c2e.crt",
+        "bundle": "/etc/apache2/ssl/gd_bundle-g2-g1.crt"
+    },
+    "mail" : {
+       "transport": "smtps://admin@augustasoftsol.com:Augusta@12@smtp.gmail.com",
+        "from" : "'support' <support@augustasoftsol.com>",
+        "error_send_mail" : "bkarthikeyan@augustasoftsol.com"
+    },
+    "jwt" :{
+        "secret":"secret"
+    },
+    "env":"local"
+}

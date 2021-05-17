@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Matrix Admin</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" href="css/colorpicker.css" />
+<link rel="stylesheet" href="css/datepicker.css" />
+<link rel="stylesheet" href="css/uniform.css" />
+<link rel="stylesheet" href="css/select2.css" />
+<link rel="stylesheet" href="css/matrix-style.css" />
+<link rel="stylesheet" href="css/matrix-media.css" />
+<link rel="stylesheet" href="css/bootstrap-wysihtml5.css" />
+<link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+</head>
+<style>
+  #content {
+    background: none repeat scroll 0 0 #eeeeee;
+    margin-left: 0px;
+    margin: 0 auto;
+    padding-bottom: 25px;
+    position: relative;
+    min-height: 100%;
+    width: 1200px;
+    text-align: center;
+}      
+    </style>  
+<body>
+    
+    
+
+    <div id="content" > <br> <h1> Node API Auto Gentration </h1> 
+        <div class="container-fluid" >
+            <form name="gii" id="gii">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5> Collection </h5>
+        </div>
+        <div class="widget-content nopadding">
+          <div  class="form-horizontal">
+            <div class="control-group">
+              <label class="control-label">Enter Collection Name</label>
+              <div class="controls">
+                <input type="text" name="collection_name" id="collection_name" class="span11" placeholder="Collection Name">
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        </div>            
+      </div>
+            
+            
+            </div>
+            
+            
+            <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5> Schema </h5>
+        </div>
+        <div class="widget-content nopadding">
+          <div  class="form-horizontal">
+            <div class="control-group mainCont hidden">
+                
+              <label class="control-label">  <a href="#" class="btn btn-danger btn-mini delete">Delete</a> Field </label>
+              <div class="controls">
+              
+                  <input type="text" name="field_name[]" id="field_name" class="span2" style="float:left" placeholder="Name">
+                  
+            
+                <select class="span2" name="type[]" id="field_type" >
+                  <option>Select Type</option>
+                  <option>String</option>
+                  <option>Number</option>
+                  <option>Date</option>
+                  <option>Buffer</option>
+                  <option>Mixed</option>
+                  <option>ObjectId</option>
+                  <option>Array</option>
+                </select>
+            
+            
+                <input type="checkbox" id="field_required" name="required[]" /> Is Require
+            </div>
+              
+            </div>
+              <div class="control-group add"></div>
+            <div class="form-actions">
+                <div  class="btn btn-success" onclick="add()"> Add  </div>
+            </div>
+          </div>
+        </div>
+        </div>            
+      </div>
+            
+            
+            </div>
+            </form>
+            
+            <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+        
+        <div class="widget-content nopadding">
+           
+            <div class="form-actions">
+                <button type="submit" class="btn btn-success" onclick="create()">Create </button>
+            </div>
+        </div>
+        </div>            
+      </div>
+            
+            
+            </div>
+            
+        </div>
+        
+    </div>
+
+
+
+<!--end-Footer-part--> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/jquery.ui.custom.js"></script> 
+<!--<script src="js/bootstrap.min.js"></script> 
+<script src="js/bootstrap-colorpicker.js"></script> 
+<script src="js/bootstrap-datepicker.js"></script> 
+<script src="js/jquery.toggle.buttons.js"></script> 
+<script src="js/masked.js"></script> 
+<script src="js/jquery.uniform.js"></script> 
+<script src="js/select2.min.js"></script> 
+<script src="js/matrix.js"></script> 
+<script src="js/matrix.form_common.js"></script> 
+<script src="js/wysihtml5-0.3.0.js"></script> -->
+<script src="js/jquery.peity.min.js"></script> 
+<script src="js/bootstrap-wysihtml5.js"></script> 
+<script>
+    
+//   $(document).ready(function(){
+//       alert("ok");
+//       $("body .delete").on('click',function (){
+//        alert("ok");
+//    });
+//});
+	$('.textarea_editor').wysihtml5();
+        $.ajax({
+  type: "POST",
+  url: "http://localhost:5000/gii",
+  data: {"ok":"ok"},
+  success: function (s){
+      console.log(s);
+  }
+//  dataType: dataType
+});
+
+function add(){
+    var maincont = $(".mainCont").html();
+    $(".add").before('<div class="control-group gii-fields">'+maincont+'</div>');
+}
+
+
+function create (){
+    var collection_name = $("#collection_name").val();
+    var field_name = [];
+    var field_type = [];
+    var field_required = [];
+    $(".gii-fields").each(function (){
+       field_name.push($(this).find('#field_name').val());
+       field_type.push($(this).find('#field_type').val());
+       if($(this).find('#field_required').is(':checked')) {
+       field_required.push('true');
+   } else {
+       field_required.push('false');
+   }
+       ;
+    });
+    
+     $.ajax({
+  type: "POST",
+  url: "http://localhost:5000/gii/createFiles",
+  data: {"name":collection_name,"field_name":field_name,"field_type":field_type,"field_required":field_required},
+  success: function (s){
+      console.log(s);
+  }
+//  dataType: dataType
+});
+}
+        
+    
+</script>
+</body>
+</html>
